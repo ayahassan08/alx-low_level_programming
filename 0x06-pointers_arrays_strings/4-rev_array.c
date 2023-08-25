@@ -13,12 +13,12 @@ void reverse_array(int *a, int n)
 	int last = n - 1;
 	int swap;
 
-	if (first < last)
+	while (first < last)
 	{
 		swap = a[first];
 		a[first] = a[last];
 		a[last] = swap;
-		last += 1;
+		first += 1;
 		last -= 1;
 	}
 }
