@@ -8,38 +8,32 @@
 
 char *leet(char *n)
 {
-	char *p = n;
+	char x;
+	int i = 0;
 
-	while (*p)
+	while ((x = n[i]))
 	{
-		char x = *p;
-
-		if (x >= 'A' && x <= 'Z')
+		if (x == 'a' || x == 'A')
 		{
-			x = x + 32;
+			n[i] = '4';
 		}
-		if (x == 'a')
+		else if (x == 'e' || x == 'E')
 		{
-			x = '4';
+			n[i] = '3';
 		}
-		else if (x == 'e')
+		else if (x == 'o' || x == 'O')
 		{
-			x = '3';
+			n[i] = '0';
 		}
-		else if (x == 'o')
+		else if (x == 't' || x == 'T')
 		{
-			x = '0';
+			n[i] = '7';
 		}
-		else if (x == 't')
+		else if (x == 'l' || x == 'L')
 		{
-			x = '7';
+			n[i] = '1';
 		}
-		else if (x == 'l')
-		{
-			x = '1';
-		}
-		*p = x;
-		p += 1;
+		i += 1;
 	}
 	return (n);
 }
