@@ -8,32 +8,23 @@
 
 char *leet(char *n)
 {
-	char x;
-	int i = 0;
+	int a = 0;
+	int b;
+	char *letters = "aAeEoOtTlL";
+	char *numbers = "4433007711";
 
-	while ((x = n[i]))
+	while (n[a])
 	{
-		if (x == 'a' || x == 'A')
+		b = 0;
+		while (letters[b] && n[a] != letters[b])
 		{
-			n[i] = '4';
+			b += 1;
 		}
-		else if (x == 'e' || x == 'E')
+		if (letters[b])
 		{
-			n[i] = '3';
+			n[a] = numbers[b];
 		}
-		else if (x == 'o' || x == 'O')
-		{
-			n[i] = '0';
-		}
-		else if (x == 't' || x == 'T')
-		{
-			n[i] = '7';
-		}
-		else if (x == 'l' || x == 'L')
-		{
-			n[i] = '1';
-		}
-		i += 1;
+		a += 1;
 	}
 	return (n);
 }
