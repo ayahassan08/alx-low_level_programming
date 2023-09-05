@@ -16,7 +16,11 @@ char *_strdup(char *str)
 	char *duplicate = malloc(sizeof(*str) * length);
 	size_t i;
 
-	if (str == NULL || duplicate == NULL)
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+	if (duplicate == NULL)
 	{
 		return (NULL);
 	}
