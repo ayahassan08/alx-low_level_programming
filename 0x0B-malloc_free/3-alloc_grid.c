@@ -12,33 +12,39 @@
 int **alloc_grid(int width, int height)
 {
 	int **grid;
-	int i, j;
+	int x, o;
 
 	/* check for invalid arguments */
 	if (width <= 0 || height <= 0)
-		return (NULL);
-
-	/* allocate memory for the array of pointers */
-	grid = malloc(sizeof(int *) * height);
-	if (grid == NULL)
-		return (NULL);
-
-	/* allocate memory for each row and initialize to 0 */
-	for (i = 0; i < height; i++)
 	{
-		grid[i] = malloc(sizeof(int) * width);
-		if (grid[i] == NULL)
+		return (NULL);
+	}
+
+	grid = malloc(sizeof(int *) * height);
+
+	if (grid == NULL)
+	{
+		return (NULL);
+	}
+
+	for (x = 0; x < height; x++)
+	{
+		grid[x] = malloc(sizeof(int) * width);
+
+		if (grid[x] == NULL)
 		{
-			/* free the allocated memory if allocation fails */
-			while (i--)
-				free(grid[i]);
+			while (x--)
+			{
+				free(grid[x]);
+			}
 			free(grid);
 			return (NULL);
 		}
-		for (j = 0; j < width; j++)
-			grid[i][j] = 0;
+		for (o = 0; o < width; o++)
+		{
+			grid[x][o] = 0;
+		}
 	}
 
-	/* return the pointer to the 2D array */
 	return (grid);
 }
