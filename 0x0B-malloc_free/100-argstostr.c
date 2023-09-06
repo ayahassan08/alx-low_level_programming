@@ -12,12 +12,15 @@
 char *argstostr(int ac, char **av)
 {
 	char *args;
-	int a, b, c, length = 0;
+	int a, b, c, length;
 
 	if (ac == 0 || av == NULL)
 	{
 		return (NULL);
 	}
+
+	length = 0;
+
 	for (a = 0; a < ac; a += 1)
 	{
 		for (b = 0; av[a][b]; b += 1)
@@ -26,6 +29,7 @@ char *argstostr(int ac, char **av)
 		}
 		length += 1;
 	}
+	length += 1;
 
 	args = malloc(sizeof(*args) * length);
 
