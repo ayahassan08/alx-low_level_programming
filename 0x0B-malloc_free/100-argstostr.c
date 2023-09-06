@@ -18,7 +18,6 @@ char *argstostr(int ac, char **av)
 	{
 		return (NULL);
 	}
-
 	for (a = 0; a < ac; a += 1)
 	{
 		for (b = 0; av[a][b]; b += 1)
@@ -45,6 +44,5 @@ char *argstostr(int ac, char **av)
 		}
 		args[c++] = '\n';
 	}
-	
 	return (args);
 }
