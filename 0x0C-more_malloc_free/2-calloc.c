@@ -13,14 +13,15 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 
 	char *x;
-	unsigned int n = 0;
-
-	void *point = malloc(nmemb * size);
+	unsigned int n;
+	void *point;
 
 	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
+
+	point = malloc(nmemb * size);
 
 	if (point == NULL)
 	{
@@ -29,10 +30,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	x = (char *)point;
 
-	while (n < nmemb * size)
+	for (n = 0; n < nmemb * size; n += 1)
 	{
 		x[n] = 0;
-		n += 1;
 	}
 
 	return (point);
