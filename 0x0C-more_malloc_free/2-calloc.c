@@ -13,7 +13,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 
 	char *x;
-	unsigned int n;
+	unsigned int n = 0;
 
 	void *point = malloc(nmemb * size);
 
