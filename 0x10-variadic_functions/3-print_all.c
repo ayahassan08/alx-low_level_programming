@@ -9,7 +9,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list arg;
-	char *x;
+	char *str;
 	int i = 0;
 
 	va_start(arg, format);
@@ -28,13 +28,13 @@ void print_all(const char * const format, ...)
 				printf("%f", va_arg(arg, double));
 				break;
 			case 's':
-				x = va_arg(arg, char*);
-				if (x == NULL)
+				str = va_arg(arg, char*);
+				if (str == NULL)
 				{
-					x = "(nill)";
+					printf("(nil)");
 					break;
 				}
-				printf("%s", x);
+				printf("%s", str);
 				break;
 		}
 
