@@ -8,9 +8,9 @@ section .text
 	extern printf
 
 main:
-	sub     rsp, 8                   ; Align the stack
+	sub     rsp, 8
 	mov     rdi, format
 	mov     rsi, advanced
 	call    printf
-	add     rsp, 8                   ; Restore the stack
+	add     rsp, 8
 	ret
