@@ -1,15 +1,10 @@
 ; Write a 64-bit program in assembly that prints
 ; Hello, Holberton, followed by a new line.
 
-
-section .data
-	advanced db "Hello, Holberton", 10
-	advanced_len equ $ - advanced
-	format db "%s", 0
+extern printf
 
 section .text
 	global main
-	extern printf
 
 main:
 	sub     rsp, 8
@@ -18,3 +13,7 @@ main:
 	call    printf
 	add     rsp, 8
 	ret
+
+section .data
+	advanced db "Hello, Holberton", 0
+	format db "%s", 10, 0
