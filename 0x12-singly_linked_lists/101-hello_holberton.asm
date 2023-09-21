@@ -12,6 +12,5 @@ main:
 	mov     rdi, format
 	mov     rsi, advanced
 	call    printf
-
 	add     rsp, 8                   ; Restore the stack
 	ret
