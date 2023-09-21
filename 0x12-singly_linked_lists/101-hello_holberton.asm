@@ -9,8 +9,8 @@ section .text
 main:
    push rbp
 
-   mov rdi, fmt
-   mov rsi, msg
+   mov rdi, format
+   mov rsi, advanced
    mov rax, 0
    call printf
 
@@ -20,5 +20,5 @@ main:
    ret
 
 section .data
-   msg: db "Hello, Holberton", 0
-   fmt: db "%s", 10, 0
+   advanced: db "Hello, Holberton", 0
+   format: db "%s", 10, 0
