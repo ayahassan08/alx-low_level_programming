@@ -8,31 +8,33 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t x = 0;
-	const listint_t *avaiNode = head;
-	const listint_t *nodes[1024];
+	const listint_t *slow_ptr = head, *fast_ptr = head;
+	size_t count = 0;
 
-	while (avaiNode != NULL)
+	if (head == NULL)
 	{
-		size_t index;
-
-		for (index = 0; index < x; index += 1)
-		{
-			if (nodes[index] == avaiNode)
-			{
-				printf("-> [%p] %d\n", (void *)avaiNode, avaiNode->n);
-
-				exit(98);
-			}
-		}
-
-		nodes[x] = avaiNode;
-		x += 1;
-
-		printf("[%p] %d\n", (void *)avaiNode, avaiNode->n);
-
-		avaiNode = avaiNode->next;
+		printf("-> [%p] %d\n", (void *)head, 0);
+		exit(98);
 	}
 
-	return (x);
+	while (fast_ptr != NULL && fast_ptr->next != NULL)
+	{
+		printf("-> [%p] %d\n", (void *)slow_ptr, slow_ptr->n);
+		count++;
+
+		slow_ptr = slow_ptr->next;
+		fast_ptr = fast_ptr->next->next;
+
+		if (slow_ptr == fast_ptr)
+		{
+			printf("-> [%p] %d\n", (void *)slow_ptr, slow_ptr->n);
+			count++;
+			exit(98);
+		}
+	}
+
+	printf("-> [%p] %d\n", (void *)slow_ptr, slow_ptr->n);
+	count++;
+
+	return (count);
 }
