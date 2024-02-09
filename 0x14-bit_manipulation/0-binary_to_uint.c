@@ -10,28 +10,19 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int res = 0;
-	unsigned int pow = 1;
+	int i;
+	unsigned int dec_val = 0;
 
-	if (b == NULL)
-	{
+	if (!b)
 		return (0);
-	}
 
-	for (int x = 0; b[x] != '\0'; x += 1)
+	for (i = 0; b[i]; i++)
 	{
-		if (b[x] != '0' && b[x] != '1')
-		{
+		if (b[i] < '0' || b[i] > '1')
 			return (0);
-		}
-
-		if (b[x] == '1')
-		{
-			res += pow;
-		}
-
-		pow <<= 1;
+		dec_val = 2 * dec_val + (b[i] - '0');
 	}
 
-	return (res);
+	return (dec_val);
 }
+
