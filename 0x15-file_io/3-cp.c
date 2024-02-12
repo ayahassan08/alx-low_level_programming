@@ -28,7 +28,7 @@ int main(int file_a, char **file_b)
 	if (fromFD == -1)
 		dprintf(STDERR_FILENO, ERR_NOREAD, file_b[1]), exit(98);
 
-	toFD = open(file_b[2], O_WRONLY | O_CREAT | O_TRUNC | PERMISSIONS);
+	toFD = open(file_b[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
 
 	if (toFD == -1)
 		dprintf(STDERR_FILENO, ERR_NOWRITE, file_b[2]), exit(99);
