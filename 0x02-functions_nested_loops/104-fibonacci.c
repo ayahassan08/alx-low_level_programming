@@ -2,6 +2,30 @@
 #include "main.h"
 
 /**
+ * nLength - prints the length of a string
+ * @number: number to be printed
+ * Return: a number
+*/
+
+int nLength(int number)
+{
+	int length = 0;
+
+	if (!number)
+	{
+		return (1);
+	}
+
+	while (number)
+	{
+		number = number / 10;
+		length += 1;
+	}
+
+	return (length);
+}
+
+/**
  * main - a program that finds and prints the first 98 Fibonacci numbers,
  *  starting with 1 and 2, followed by a new line.
  * Return: Always 0 (Success)
@@ -20,7 +44,7 @@ int main(void)
 			printf("%lu", nacci1);
 		}
 
-		numbers = numLength(max) - 1 - numLength(fibo1);
+		numbers = nLength(max) - 1 - nLength(fibo1);
 
 		while (nacci1 > 0 && numbers > 0)
 		{
