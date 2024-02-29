@@ -19,10 +19,10 @@ void print_times_table(int n)
 	{
 		for (y = 0; y <= n; y += 1)
 		{
-			printf("%d, ", x * y);
+			_putchar("%d, ", x * y);
 		}
 
-		printf("\n");
+		_putchar("\n");
 	}
 
 }
