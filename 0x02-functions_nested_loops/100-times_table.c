@@ -13,26 +13,16 @@ void print_times_table(int n)
 		return;
 	}
 
-	int x, y, result;
+	int x, y;
 
 	for (x = 0; x <= n; x += 1)
 	{
 		for (y = 0; y <= n; y += 1)
 		{
-			result = x * y;
-
-			if (y == 0)
-			{
-				printf("%d", result);
-			}
-
-			else
-			{
-				printf(", %3d", result);
-			}
-
-			printf("\n");
+			printf("%d, ", x * y);
 		}
+
+		printf("\n");
 	}
 
 }
