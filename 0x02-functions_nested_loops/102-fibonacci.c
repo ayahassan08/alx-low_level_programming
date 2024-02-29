@@ -21,10 +21,10 @@ int main(void)
 		fibo2 = sum;
 
 		if (result == 49)
-			printf('\n');
+			printf("\n");
 
 		else
-			printf(', ');
+			printf(", ");
 	}
 
 	return (0);
