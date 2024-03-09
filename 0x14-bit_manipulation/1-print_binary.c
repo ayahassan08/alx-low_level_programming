@@ -8,22 +8,24 @@
 
 void print_binary(unsigned long int n)
 {
-	int x, bin = 0;
-	unsigned long int rep;
+	int bin = sizeof(n) * 8, num = 0;
 
-	for (x = 63; x >= 0; x--)
+	while (bin)
 	{
-		rep = n >> x;
-
-		if (rep & 1)
+		if (n & 1L << --bin)
 		{
-			putchar('1');
-			bin++;
+			_putchar('1');
+			num += 1;
 		}
 
-		else if (bin)
+		else if (num)
 		{
-			putchar('0');
+			_putchar('0');
 		}
+	}
+
+	if (!num)
+	{
+		_putchar('0');
 	}
 }
