@@ -3,7 +3,7 @@
 /**
  * add_dnodeint - adds a new node at the beginning of a dlistint_t list
  * @head: head of the list
- * @n: a new node to be added
+ * @n: a value
  * Return: the address of the new element, or NULL if it failed
 */
 
