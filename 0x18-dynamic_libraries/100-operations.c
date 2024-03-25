@@ -2,10 +2,6 @@
 
 /**
  * add - arithmetic function to calculate the addition of 2 values
- * sub - arithmetic function to calculate the sub of 2 values
- * mul - arithmetic function to calculate the mul of 2 values
- * div - arithmetic function to calculate the div of 2 values
- * mod - arithmetic function to calculate the mod of 2 values
  * @a: a value
  * @b: another value
  * Return: the result of each operation
