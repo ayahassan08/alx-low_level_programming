@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc -shared -o libgiga.so -fPIC -ldl -D_GNU_SOURCE custom_random.c
-LD_PRELOAD=./libgiga.so ./gm 9 8 10 24 75 9
+wget -P /tmp https://github.com/ayahassan08/alx-low_level_programming/raw/master/0x18-dynamic_libraries/libgiga.so
+export LD_PRELOAD=/tmp/libgiga.so
